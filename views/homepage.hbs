@@ -1,3 +1,8 @@
 <div>
-    <p>Hello World</p>
+    <h3>Existing Blogs:</h3>
+    {{#each show_blog}}
+        <div>{{this.blog_title}}</div>
+        <div>Posted By: {{this.blogger_name}} on {{this.blog_post_time}}</div>
+        <div>{{this.blog_content}}</div><br>
+    {{/each}}
 </div>
