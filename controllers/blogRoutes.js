@@ -27,7 +27,7 @@ const blogs = [
 // });
 
 //get all blogs
-router.get('/home', async (req, res) => {
+router.get('/', async (req, res) => {
     res.render('homepage.hbs', { 
         layout: 'layouts/main.hbs',
         // show_blog: new Blog
@@ -42,10 +42,10 @@ router.get('/home', async (req, res) => {
 
 //get login page
 router.get('/login', async (req, res) => {
-    // if (req.session.logged_in) {
-    //     res.redirect('/profile');
-    //     return;
-    // }
+    if (req.session.logged_in) {
+        res.redirect('/');
+        return;
+    }
     res.render('login', {
         layout: 'layouts/main.hbs',
     });
